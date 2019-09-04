@@ -60,10 +60,10 @@ if __name__ == "__main__":
       break
 
   if args.recover:
-    p.can_send(0x200, "\xce\xfa\xad\xde\x1e\x0b\xb0\x02", 0)
+    p.can_send(0x551, "\xce\xfa\xad\xde\x1e\x0b\xb0\x02", 0)
     exit(0)
   else:
-    p.can_send(0x200, "\xce\xfa\xad\xde\x1e\x0b\xb0\x0a", 0)
+    p.can_send(0x551, "\xce\xfa\xad\xde\x1e\x0b\xb0\x0a", 0)
 
   if args.fn:
     time.sleep(0.1)
