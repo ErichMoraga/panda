@@ -240,7 +240,7 @@ void TIM3_IRQHandler(void) {
     dat[1] = (pdl0 >> 0) & 0xFFU;
     dat[2] = (pdl1 >> 8) & 0xFFU;
     dat[3] = (pdl1 >> 0) & 0xFFU;
-    dat[4] = ((state & 0xFU) << 4) | pkt_idx;
+    dat[4] = ((pkt_idx & 0xFU) << 4) | state;
     dat[5] = pedal_checksum(dat, CAN_GAS_SIZE - 1, CAN_GAS_OUTPUT);
     CAN->sTxMailBox[0].TDLR = dat[0] | (dat[1] << 8) | (dat[2] << 16) | (dat[3] << 24);
     CAN->sTxMailBox[0].TDHR = dat[4] | (dat[5] << 8);
