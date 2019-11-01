@@ -16,6 +16,7 @@
 #include "safety/safety_mazda.h"
 #include "safety/safety_volkswagen.h"
 #include "safety/safety_elm327.h"
+#include "safety/safety_toyota_fwd.h"
 
 // from cereal.car.CarParams.SafetyModel
 #define SAFETY_NOOUTPUT 0U
@@ -35,6 +36,7 @@
 #define SAFETY_TOYOTA_IPAS 16U
 #define SAFETY_ALLOUTPUT 17U
 #define SAFETY_GM_ASCM 18U
+#define SAFETY_TOYOTA_FWD 19U
 
 uint16_t current_safety_mode = SAFETY_NOOUTPUT;
 const safety_hooks *current_hooks = &nooutput_hooks;
@@ -78,6 +80,7 @@ const safety_hook_config safety_hook_registry[] = {
   {SAFETY_TOYOTA_IPAS, &toyota_ipas_hooks},
   {SAFETY_ALLOUTPUT, &alloutput_hooks},
   {SAFETY_GM_ASCM, &gm_ascm_hooks},
+  {SAFETY_TOYOTA_FWD, &toyota_fwd_hooks},
 };
 
 int safety_set_mode(uint16_t mode, int16_t param) {
