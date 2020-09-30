@@ -49,9 +49,9 @@ static int default_fwd_hook(int bus_num, CAN_FIFOMailBox_TypeDef *to_fwd) {
       eon_detected_last = ts;
     }
     send_id();
-    bus_fwd = 2;
+    bus_fwd = 1;
   }
-  if(bus_num == 2){
+  if(bus_num == 1){
     // block cruise message only if it's already being sent on bus 0
     if(!onboot){
       startedtime = TIM2->CNT;
