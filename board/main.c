@@ -1,5 +1,6 @@
 //#define EON
 //#define PANDA
+#define DEBUG
 
 // ********************* Includes *********************
 #include "config.h"
